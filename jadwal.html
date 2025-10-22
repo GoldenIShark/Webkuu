@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Jadwal</title>
+    <style type="text/css" media="all">
+    body {
+        animation: bgc 5s linear infinite;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        
+    }
+    @keyframes bgc {
+        0%   {background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #333;}
+        50%  {background: linear-gradient(180deg, #a777e3, #6e8efb);
+            color: #333;}
+        100% {background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #333;}
+    }
+        td {
+            border-color: #FFA100;
+            border-width: 2px;
+            border-style: solid;
+            padding: 5px;
+            text-align: center;
+            color: #FFEF00;
+            background-color: #AC62FF;
+        }
+        h2 {
+            font-style: italic;
+            color: #1500FF;
+            text-align: center;
+            font-size: 40px;
+        }
+        @keyframes warnatxt {
+            0%   { color: #80FF00; }
+            50%  { color: #7A00FF; }
+            100% { color: #80FF00; }
+        }
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+        #outputnohari {
+            margin-top: 15px;
+            padding: 10px;
+            border: 2px solid #08FF00;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            white-space: pre-line; /* biar \n jadi baris baru */
+        }
+        #outputnohari {
+            background-color: #AC62FF;
+        }
+    </style>
+</head>
+<body>
+    <h2>JADWAL</h2>
+
+    <table border="1" style="border-color: #08FF00; border-style: solid; border-width: 2px;">
+        <tr>
+            <td>1. Senin</td>
+            <td>2. Selasa</td>
+            <td>3. Rabu</td>
+            <td>4. Kamis</td>
+            <td>5. Jumat</td>
+            <td>6. Sabtu</td>
+        </tr>
+    </table>
+
+    <div style="text-align:center; margin-top:15px;">
+        <label for="inputnohari">Masukkan nomor hari (1–6): </label>
+        <input type="number" min="1" max="6" name="inputnohari" id="inputnohari" />
+        <button onclick="tomboljadwal()">OK</button>
+    </div>
+
+    <div id="outputnohari"></div>
+
+    <script type="text/javascript" charset="utf-8">
+        function tomboljadwal() {
+            let jadwala = parseInt(document.getElementById("inputnohari").value);
+            let hasil = "";
+
+            if (jadwala === 1) {
+                hasil = "Senin:\n \n65 B.Arab (Pak Dana)\n65 B Arab\n80 BK (Bu Intan)\n48 Kimia (Bu Tati)\n48 Kimia\n55 Literasi (Pak Sigit)\n68 Fiqih (Bu Wardatul)\n68 Fiqih\n07 Ekonomi (Bu Sholikhah)\n07 Ekonomi";
+            } else if (jadwala === 2) {
+                hasil = "Selasa:\n \n52 B.Jawa (Pak Himawan)\n45 B.indonesia (Bu Murti)\n69 Sosiologi (Bu Dara)\n69 Sosiologi\n04 Biologi (minat) (Bu Wiwin)\n04 Biologi (minat)\n03 B.Inggris (wajib) (Bu Umi)\n03 B.Inggris (wajib)\n16 Pendidikan Pancasila (Bu Diah)\n16 Pendidikan Pancasila";
+            } else if (jadwala === 3) {
+                hasil = "Rabu:\n \n60 Qur'an Hadist (Bu Luluk)\n60 Qur'an Hadist\n39 Sejarah (wajib) (Bu Puri)\n14 Sejarah (wajib) (Pak Ikhsan)\n14 Sejarah (wajib)\n55 Tahfidz (Pak Sigit)\n34 B.Indonesia (Pak Joko Santoso)\n34 B.Indonesia\n46 Fisika (Pak Wasis)\n46 Fisika";
+            } else if (jadwala === 4) {
+                hasil = "Kamis:\n \n38 Penjasorkes (Pak Joko Lelono)\n38 Penjasorkes\n70 MTK (Bu Endah)\n70 MTK\n71 Akidah Akhlak (Bu Desy)\n71 Akidah Akhlak\n35 Geografi (wajib) (Bu Pudyastuti)\n35 Geografi (wajib)\n50 Informatika (Pak Bayu)\n50 Informatika";
+            } else if (jadwala === 5) {
+                hasil = "Jumat:\n \n36 Matematika (wajib) (Bu Dian)\n36 Matematika (wajib)\n07 Prakarya (Bu Sholikhah)\n47 Seni Budaya (Bu Nita)\n47 Seni Budaya";
+            } else if (jadwala === 6) {
+                hasil = "Sabtu:\n \n55 SKI (Pak Sigit)\n55 SKI\n58 B.inggris (Bu/Mrs Arina)\n40 Metodologi Penelitian (Bu Mutiara)\n41 B.Arab (Bu Naili)\n41 B.Arab";
+            } else {
+                hasil = "TIDAK ADA DATA/INFORMASI";
+            }
+
+            document.getElementById("outputnohari").innerText = hasil;
+        }
+    </script>
+</body>
+</html>
